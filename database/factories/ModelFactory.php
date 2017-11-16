@@ -22,15 +22,3 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
-
-$factory->define(App\Post::class, function (Faker\Generator $faker) {
-    // Get a random user
-    $user = \App\User::inRandomOrder()->first();
-
-    // generate fake data for post
-    return [
-        'user_id' => $user->id,
-        'title' => $faker->sentence,
-        'body' => $faker->text,
-    ];
-});

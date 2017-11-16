@@ -14,14 +14,3 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/', 'PostsController@index');
-
-Route::post('favorite/{post}', 'PostsController@favoritePost');
-Route::post('unfavorite/{post}', 'PostsController@unFavoritePost');
-
-Route::get('my_favorites', 'UsersController@myFavorites')->middleware('auth');
